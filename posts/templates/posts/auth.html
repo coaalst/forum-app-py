@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta charset="utf-8">
-
-	<title>RAF-forum | Login</title>
-	<!--za stylesheet-->
-	{% load static %}
-	<link rel="stylesheet" href="{% static "/stylesheets/style.css" %}">
-
-</head>
-
-<body>
-	<!--signin-form-->
-	<div class="signin-form-profile">
-		<div class="dropdown">
-			<h1>🚀 RAF Forum 🚀 </h1>
-			<div class="row">
-
-				<div class="column">
-					<h3>{{login}}</h3>
-					<form class="form-inline" name="login" target="_blank" action="/profiles/login/" method="post">
-						<input class="dropdownInput" type="text" name="name" placeholder="Name" required="">
-						<input class="dropdownInput" type="password" name="password" placeholder="Password" required="">
-						<div class="tp">
-							<button class="dropbtnWide" type="submit">Login</button>
-						</div>
-					</form>
+	<head>
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta charset="utf-8">
+		<title>RAF-forum | Login</title>
+		<!--za stylesheet-->
+		{% load static %}
+		<link rel="stylesheet" href="{% static "/stylesheets/style.css" %}">
+	</head>
+	<body>
+		<!--signin-form-->
+		<div class="signin-form-profile">
+			<div class="dropdown">
+				<h1>🚀 RAF Forum 🚀 </h1>
+				<div class="row">
+					<div class="column">
+						<h3>{{login}}</h3>
+						<form class="form-inline" name="login" target="_blank" action="/profiles/login/" method="post">
+							<input class="dropdownInput" type="text" name="name" placeholder="Name" required="">
+							<input class="dropdownInput" type="password" name="password" placeholder="Password" required="">
+							<div class="tp">
+								<button class="dropbtnWide" type="submit">Login</button>
+							</div>
+						</form>
+					</div>
+					<div class="column">
+						<h3>{{register}}</h3>
+						<form class="form-inline" name="register" target="_blank" action="/profiles/register/" method="post">
+							<input class="dropdownInput" type="text" name="name" placeholder="Name" required="">
+							<input class="dropdownInput" type="password" name="password" placeholder="Password" required="">
+							<div class="tp">
+								<button class="dropbtnWide" type="submit">Register</button>
+							</div>
+						</form>
+					</div>
 				</div>
-
-				<div class="column">
-					<h3>{{register}}</h3>
-					<form class="form-inline" name="register" target="_blank" action="/profiles/register/" method="post">
-						<input class="dropdownInput" type="text" name="name" placeholder="Name" required="">
-						<input class="dropdownInput" type="password" name="password" placeholder="Password" required="">
-						<div class="tp">
-							<button class="dropbtnWide" type="submit">Register</button>
-						</div>
-					</form>
-
-				</div>
-			  </div> 
+			</div>
 		</div>
-	</div>
-	<div class="clear"></div>
-</body>
-
+		<div class="clear"></div>
+	</body>
 </html>

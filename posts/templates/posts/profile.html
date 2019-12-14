@@ -3,26 +3,24 @@ including header content which is common for all pages
 -->
 {% extends "posts/layouts/header.html"%}
 {% block content %}
-       <h1>🏡 Vasi postovi 🏡</h1>
-
-
-<div class="dropdown">
-  <form class="form-inline" action="/posts/filter/" method="get">
-    <label for="naslov">Title:</label>
-    <input class="dropdownInput" type="text" id="title" placeholder="Unesi naslov" name="title">
-    <label for="text">Tweet:</label>
-    <input class="dropdownInput" type="text" id="tweet" placeholder="Unesi tekst" name="tweet">
-    <input type="hidden" name="from" value="p">
-    <button class="dropbtn" type="submit">Filter posts</button>
-  </form>
-</div>
-<!--regular posts-->
-{% for post in posts %}
-<div class="card">
-  <div class="container">
-    <h4><b> {{ post.title }} </b></h4>
-    <p> {{post.tweet}} </p>
-    <form id="form1{{post.id}} " action="/posts/edit/{{post.id}}" method="GET"></form>
+  <h1>🏡 Vasi postovi 🏡</h1>
+  <div class="dropdown">
+    <form class="form-inline" action="/posts/filter/" method="get">
+      <label for="naslov">Title:</label>
+      <input class="dropdownInput" type="text" id="title" placeholder="Unesi naslov" name="title">
+      <label for="text">Tweet:</label>
+      <input class="dropdownInput" type="text" id="tweet" placeholder="Unesi tekst" name="tweet">
+      <input type="hidden" name="from" value="p">
+      <button class="dropbtn" type="submit">Filter posts</button>
+    </form>
+  </div>
+  <!--regular posts-->
+  {% for post in posts %}
+    <div class="card">
+      <div class="container">
+        <h4><b> {{ post.title }} </b></h4>
+        <p> {{post.tweet}} </p>
+      <form id="form1{{post.id}} " action="/posts/edit/{{post.id}}" method="GET"></form>
     <form id="form2{{post.id}} " action="/posts/delete/{{post.id}}" method="DELETE"></form>
   </div>
   <div class="login-form" style="float:left">
@@ -33,7 +31,7 @@ including header content which is common for all pages
 {% endfor %}
 <script>
 function submitform(formname) {
-    document.forms[formname].submit();
+document.forms[formname].submit();
 }
 </script>
 {% endblock content %}
