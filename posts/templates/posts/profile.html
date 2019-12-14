@@ -1,0 +1,42 @@
+<!--
+including header content which is common for all pages
+-->
+<% include /layouts/header.ejs %>
+<% stylesheet('../assets/stylesheets') -%>
+<h1>🏡 Vasi postovi 🏡</h1>
+
+
+<div class="dropdown">
+  <form class="form-inline" action="/posts/filter/" method="get">
+    <label for="naslov">Title:</label>
+    <input class="dropdownInput" type="text" id="title" placeholder="Unesi naslov" name="title">
+    <label for="text">Tweet:</label>
+    <input class="dropdownInput" type="text" id="tweet" placeholder="Unesi tekst" name="tweet">
+    <input type="hidden" name="from" value="p">
+    <button class="dropbtn" type="submit">Filter posts</button>
+  </form>
+</div>
+<!--regular posts-->
+<% posts.forEach(function(post) { %>
+<div class="card">
+  <div class="container">
+    <h4><b><%= post.title %></b></h4>
+    <p><%= post.tweet%></p>
+    <form id="form1<%= post.id %>" action="/posts/edit/<%= post.id %>" method="GET"></form>
+    <form id="form2<%= post.id %>" action="/posts/delete/<%= post.id %>" method="DELETE"></form>
+  </div>
+  <div class="login-form" style="float:left">
+    <button class="dropbtnCard" id="button1" name="edit" onclick="submitform('form1<%= post.id %>');">Edit</button>
+    <button class="dropbtnCard" id="button2" name="delete" onclick="submitform('form2<%= post.id %>');">Delete</button>
+  </div>
+</div>
+
+<% }); %>
+<script>
+function submitform(formname) {
+    document.forms[formname].submit();
+}
+</script>
+</body>
+
+</html>
