@@ -18,8 +18,8 @@ including header content which is common for all pages
   {% for post in posts %}
     <div class="card">
       <div class="container">
-        <h4><b> {{ post.title }} </b></h4>
-        <p> {{post.tweet}} </p>
+        <h4><b> {{ post.post_title }} </b></h4>
+        <p> {{post.post_tweet}} </p>
       <form id="form1{{post.id}} " action="/posts/edit/{{post.id}}" method="GET"></form>
     <form id="form2{{post.id}} " action="/posts/delete/{{post.id}}" method="DELETE"></form>
   </div>

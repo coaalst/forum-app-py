@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-# Login
-def auth(request):
-    return render(request, 'posts/auth.html', {'login': 'Uloguj se', 'register': 'Registruj se'})
+from .models import Post
 
 # Main board
 def board(request):
-    return render(request, 'posts/board.html')
+	context = {'posts': Post.objects.all()}
+	return render(request, 'posts/board.html', context)
 
 # Profile page
 def profile(request):

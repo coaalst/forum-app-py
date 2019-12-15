@@ -68,16 +68,10 @@ header nav li a.active {
 }
 
 .column {
-  float: left;
-  width: 50%;
+  margin: auto;
+  align-self: center;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 .dropbtn {
     background-color: #293d3d;
