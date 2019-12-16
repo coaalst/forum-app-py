@@ -67,9 +67,18 @@ header nav li a.active {
     opacity: 1.0;
 }
 
-.column {
-  margin: auto;
-  align-self: center;
+.auth {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-inline {
+   width: 750px;
+  height: 400px;
+  display: flex;
 }
 
 
@@ -126,6 +135,15 @@ header nav li a.active {
     align-self: center;
     text-align: center;
   }
+
+  .dropdown-auth {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin: auto;
+    align-self: center;
+    text-align: center;
+  }
   
   
   .dropdown a:hover {background-color: #ddd;}
@@ -171,51 +189,24 @@ h1 {
     text-align: center;
 }
 
-.login-form {
-    margin: 1em 0 2.5em;
-    display: inline-block;
+.signin-form-profile-auth {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin: auto;
+    align-self: center;
+    text-align: left;
 }
-
-/*--//signin-form--*/
 
 h2 {
     padding: 0.5em;
     text-align: center;
 }
 
-.form-inline {
-    display: flex;
-    align-items: center;
-    display: inline-block;
-    border-radius: 15px;
-  }
-  
-  /* Add some margins for each label */
-  .form-inline label {
-    margin: 5px 10px 5px 0;
-  }
-  
-  /* Style the input fields */
-  .form-inline input {
-    vertical-align: middle;
-    margin: 5px 10px 5px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-  }
-  
-  /* Style the submit button */
-  .form-inline button {
-    background-color: #293d3d;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .form-inline button:hover {
-    background-color: #3e8e41;
-  }
+h3 {
+    padding: 0.5em;
+    color: #fff;
+    text-align: center;
+}
+
 

@@ -10,16 +10,16 @@
 	</head>
 	<body>
 		<!--signin-form-->
-		<div class="signin-form-profile-auth">
+		<div class="signin-form-profile">
 			<div class="dropdown-auth">
 				<h1>🚀 RAF Forum 🚀 </h1>
-				<div class="auth">
+				<div class="column">
 						<form class="form-inline" name="login"  method="POST">
 							{% csrf_token %}
 							{{form.as_p}}
 							<div class="tp">
-								<button class="dropbtnWide" type="submit">Register</button>
-                                <br>Vec imas nalog? <<a href="/login/">Uloguj se</a>
+								<button class="dropbtnWide" type="submit">Login</button>
+								<br>Treba ti nalog? <a href="/">Registruj se</a>
 							</div>
 						</form>
 					</div>
