@@ -22,6 +22,11 @@
       <div class="container">
         <h4><b>{{ post.post_title }}</b></h4>
         <p> {{post.post_tweet}} </p>
+        <br>
+        {% if post.post_user_id == user %}
+          <a class="dropbtn" href="{% url 'posts-edit_post' post.id %}">Edit</a>
+          <a class="dropbtn" href="{% url 'posts-delete_post' post.id %}"> Delete </a>
+        {% endif %}
       </div>
     </div>
   {% endfor %}
