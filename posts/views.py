@@ -5,6 +5,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView, CreateView, UpdateView, DeleteView)
 from django.urls import reverse_lazy
 from .models import Post
+import logging
+
+logger = logging.getLogger("mylogger")
 
 
 # Prikaz glavne stranice sa svim postovima
@@ -43,16 +46,16 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 	success_url = reverse_lazy('posts-board')
 
 # Prikaz profila sa postovima
-class PostProfileView(ListView):
+class PostProfileView(LoginRequiredMixin, ListView):
 	model = Post
-	template_name = 'posts/prfile.html'
+	context_object_name = 'posts'
 
 	def get_queryset(self):
-		queryset = super(PostProfileView, self).get_queryset()
-		queryset = queryset.filter(post_user_id = self.request.user)
-		return queryset
+		return Post.objects.filter(post_user_id == self.request.user)
 
-	context_object_name = 'posts'
+
+	template_name = 'posts/profile.html'
+	
 
 # Brisanje posta
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -65,17 +68,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 		return False
 
 	success_url = reverse_lazy('posts-board')
-
-# Profile page
-@login_required
-def profile(request):
-	context = {'posts': Post.objects.all()}
-	return render(request, 'posts/profile.html', context)
-
-# New posts
-@login_required
-def new_post(request):
-    return render(request, 'posts/new_post.html')
 
 # Logout
 def logout(request):

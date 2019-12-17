@@ -105,18 +105,6 @@ header nav li a.active {
     border-radius: 35px;
   }
 
-  .dropbtnWideDelete {
-    background-color: #b30047;
-    color: white;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    width: 200px;
-    height: 60px;
-    border-radius: 35px;
-  }
-
   .dropdownInput {
     border-radius: 15px;
   }
