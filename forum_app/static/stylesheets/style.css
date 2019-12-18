@@ -7,6 +7,8 @@ body {
     padding: 0;
     font-family: 'Roboto';
     color: #212121;
+    text-decoration-color: #293d3d
+    font-weight: bold;
 }
 
 header-wrapper {
@@ -65,14 +67,6 @@ header nav li.last {
 
 header nav li a.active {
     opacity: 1.0;
-}
-
-.auth {
-  width: 300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .form-inline {
@@ -135,20 +129,9 @@ header nav li a.active {
     align-self: center;
     text-align: center;
   }
-
-  .dropdown-auth {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin: auto;
-    align-self: center;
-    text-align: center;
-  }
   
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
+.dropdown a:hover {background-color: #ddd;}  
+.show {display: block;}
 .card {
     margin: auto;
     align-self: center;
@@ -165,37 +148,16 @@ header nav li a.active {
     border-radius: 10px;
 } 
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 32px 64px 0 rgba(0,0,0,0.2);
   }
   
-/* Add some padding inside the card container */
-
 h1 {
     color: #fff;
     text-align: center;
     padding: 1em 0 0 0;
     font-size: 3em;
     font-weight: 700;
-}
-/*-- main --*/
-.signin-form-profile {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin: auto;
-    align-self: center;
-    text-align: center;
-}
-
-.signin-form-profile-auth {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin: auto;
-    align-self: center;
-    text-align: left;
 }
 
 h2 {
@@ -207,6 +169,9 @@ h3 {
     padding: 0.5em;
     color: #fff;
     text-align: center;
+    padding: 1em 0 0 0;
+    font-size: 3em;
+    font-weight: 700;
 }
 
 

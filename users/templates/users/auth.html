@@ -9,21 +9,16 @@
 		<link rel="stylesheet" href="{% static "/stylesheets/style.css" %}">
 	</head>
 	<body>
-		<!--signin-form-->
-		<div class="signin-form-profile-auth">
-			<div class="dropdown-auth">
-				<h1>🚀 RAF Forum 🚀 </h1>
-				<div class="auth">
-						<form class="form-inline" name="login"  method="POST">
-							{% csrf_token %}
-							{{form.as_p}}
-							<div class="tp">
-								<button class="dropbtnWide" type="submit">Register</button>
-                                <br>Vec imas nalog? <<a href="/login/">Uloguj se</a>
-							</div>
-						</form>
-					</div>
-			</div>
+		<div class="dropdown">
+			<h1>🚀 RAF Forum 🚀 </h1>
+			<form class="form-inline" name="login"  method="POST">
+				{% csrf_token %}
+				{{form.as_p}}
+				<div class="tp">
+					<button class="dropbtnWide" type="submit">Register</button>
+                    <br><h4>Vec imas nalog? <a href="/login/">Uloguj se</a></h4>
+				</div>
+			</form>
 		</div>
 		<div class="clear"></div>
 	</body>
