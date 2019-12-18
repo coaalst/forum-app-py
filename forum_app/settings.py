@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'crispy_forms',
+    'django_filters',
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
     'django.contrib.admin',

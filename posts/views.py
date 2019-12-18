@@ -17,13 +17,19 @@ class PostListView(LoginRequiredMixin, ListView):
 	context_object_name = 'posts'
 
 # Prikaz stranice za dodavanje postova
-class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
 	model = Post
 	fields = ['post_title', 'post_tweet']
 
 	def form_valid(self, form):
 		form.instance.post_user_id = self.request.user
 		return super().form_valid(form)
+
+	def test_func(self):
+		post = self.get_object()
+		if self.request.user == post.post_user_id:
+			return True
+		return False
 
 	success_url = reverse_lazy('posts-board')
 
@@ -49,12 +55,13 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 class PostProfileView(LoginRequiredMixin, ListView):
 	model = Post
 	context_object_name = 'posts'
+	template_name = 'posts/profile.html'
 
 	def get_queryset(self):
-		return Post.objects.filter(post_user_id == self.request.user)
-
-
-	template_name = 'posts/profile.html'
+		post_user_id = self.request.user
+		qs = super(PostProfileView, self).get_queryset()
+		return qs.filter(post_user_id = post_user_id)
+		
 	
 
 # Brisanje posta
