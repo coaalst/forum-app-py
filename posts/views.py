@@ -5,10 +5,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView, CreateView, UpdateView, DeleteView)
 from django.urls import reverse_lazy
 from .models import Post
-import logging
-
-logger = logging.getLogger("mylogger")
-
 
 # Prikaz glavne stranice sa svim postovima
 class PostListView(LoginRequiredMixin, ListView):
@@ -62,8 +58,6 @@ class PostProfileView(LoginRequiredMixin, ListView):
 		qs = super(PostProfileView, self).get_queryset()
 		return qs.filter(post_user_id = post_user_id)
 		
-	
-
 # Brisanje posta
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Post

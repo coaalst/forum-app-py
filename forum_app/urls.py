@@ -19,7 +19,8 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 from posts.views import PostProfileView
 
-
+# Patterni za glavni app
+# Svi zahtevi za postove se rutiraju na posts app
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
